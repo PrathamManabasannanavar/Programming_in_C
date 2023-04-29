@@ -30,7 +30,7 @@ main()
       printf("%d ",rem);
       var=var/10;
       }
-      printf("\n");
+      printf("\n\n");
     }
     
 }
