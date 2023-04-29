@@ -1,5 +1,5 @@
 /*A simple C program to find and compute 
-the date of birth of an individual using pointers */
+the age of an individual using pointers */
 #include<stdio.h>
 
 void convert(int*, int*);
