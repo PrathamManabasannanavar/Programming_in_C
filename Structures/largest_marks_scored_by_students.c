@@ -1,3 +1,5 @@
+// A sim-ple C program to find and compute the marks of the students
+
 #include<stdio.h>
 
 typedef struct marks
