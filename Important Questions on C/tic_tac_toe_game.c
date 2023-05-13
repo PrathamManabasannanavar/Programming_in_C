@@ -1,6 +1,6 @@
 //A simple C program to print and compute the tic_tac_toe game
 /*Note:- There are some limitations in this code but it will run as expected except in some cases
-I'm still modifying this code tomake it more efficient */
+I'm still modifying this code to make it more efficient */
 
 #include<stdio.h>
 #include<stdlib.h>
