@@ -13,7 +13,6 @@ main()
   int x[50][50],y[50][50];
   int m,n,a,b;
   int z[50][50];
-  //int *ptr1=a, *ptr2=b;
 
   printf("Enter the order of 1st matrix\n");
   scanf("%d %d",&a,&b);
