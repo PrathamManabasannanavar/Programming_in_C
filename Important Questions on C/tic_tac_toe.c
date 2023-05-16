@@ -1,3 +1,4 @@
+//This is a simple modular C program to build a tic_tac_toe game
 #include<stdio.h>
 #include<stdlib.h>
 
