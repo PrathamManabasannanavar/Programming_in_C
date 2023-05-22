@@ -23,7 +23,7 @@ int main()
  }
 
  read(x,y,a,b,p,q); //reads the matrix elements 
- multiply(x,y,prod,a,q); //Multiplies two matrix
+ multiply(x,y,prod,a,q); //Multiplies two matrices
 
  printf("The product Matrix is:-\n");
  display(prod,a,q);
