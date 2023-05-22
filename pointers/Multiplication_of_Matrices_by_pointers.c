@@ -16,7 +16,7 @@ int main()
  printf("Enter the order of 2nd Matrix\n");
  scanf("%d %d",&p,&q);
 
- if(a!=q)//checks for multiplication condition 
+ if(b!=p)//checks for multiplication condition 
  { 
    printf("Two Matrices cannot be multiplied\n");
    exit(0);
