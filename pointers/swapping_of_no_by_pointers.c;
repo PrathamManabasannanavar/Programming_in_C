@@ -1,3 +1,4 @@
+//A simple C program to swap to no using pointers
 #include<stdio.h>
 int swap(int*, int*);
 
