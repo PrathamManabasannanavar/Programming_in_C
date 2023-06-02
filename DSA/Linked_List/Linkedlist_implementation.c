@@ -23,6 +23,11 @@ int main()
   printf("Enter your choice\n Enter 1 to continue\n Enter 0 to exit\n");
   scanf("%d",&choice);
 
+  if(choice!=1 && choice!=2)
+  {
+   printf("Enter valid no!!\n");
+   exit(0);
+  }
   if(choice==0)
   {
     if(count==1)
