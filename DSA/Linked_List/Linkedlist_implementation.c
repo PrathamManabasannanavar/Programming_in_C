@@ -26,7 +26,7 @@ int main()
   if(choice!=0 && choice!=1)
   {
    printf("Enter valid no!!\n");
-   exit(0);
+   continue;
   }
   if(choice==0)
   {
