@@ -11,7 +11,7 @@ int check(char *);
 int main()
 
 {
- char str[SIZE], alpha[50];
+ char str[SIZE], alpha[SIZE];
 
  read(str);
  while(check(str)==0)
