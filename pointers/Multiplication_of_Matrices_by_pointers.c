@@ -55,8 +55,8 @@ void read(int (*ptr1)[50], int (*ptr2)[50], int a, int b, int p, int q)
   scanf("%d",*(ptr1+i)+j);
 
  printf("Enter the elements of 2nd Matrix\n");
- for(i=0; i<a; i++)
-  for(j=0; j<b; j++)
+ for(i=0; i<p; i++)
+  for(j=0; j<q; j++)
   scanf("%d",*(ptr2+i)+j);
 }
 
