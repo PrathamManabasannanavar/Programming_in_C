@@ -1,4 +1,4 @@
-//A,simple C program to delete an element from array
+//A simple C program to delete an element from array
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -19,7 +19,7 @@ main()
     scanf("%d",&element);
     
     int found=search(a,n,element);
-    if(found==0)
+    if(found==-1)
     {
      printf("Element not found!!\n");
      exit(0);
@@ -59,7 +59,7 @@ int search(int *ptr, int n, int element)
   if(*(ptr+i)==element)
     return count;
 
- return 0;
+ return -1;
 }
 
 void print_arr(int *ptr, int n)
