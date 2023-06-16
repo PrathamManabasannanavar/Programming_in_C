@@ -5,12 +5,13 @@
 int search(char *, char, int );
 void delete(char *, int, int);
 int str_len(char *);
+int check(char *, char);
 
 main()
 
 {
  char str[50], ch;
- int len;
+ int len, found;
 
  printf("Enter the string\n");
  scanf("%s",str);
@@ -19,6 +20,12 @@ main()
  printf("Enter character to be deleted\n");
  scanf(" %c",&ch);
 
+ found = check(str, ch);
+ if(found==0)
+ {
+   printf("Entered character not found in the string!!\n");
+   exit(0);
+ }
  len = search(str,ch,len);
  
  printf("The string is:-\n %s\n",str);
@@ -26,20 +33,17 @@ main()
 
 int search(char *str, char ch, int len)
 {
- int i, count=0;
+ int i;
  for(i=0; i<len; i++)
  {
   if(*(str+i) == ch)
   {
     delete(str,i,len);
     i=i-1; //very important in case of repeated characters
-    len--; count=1;
+    len--;
   }
-  else if(count==0)
-  {
-   printf("Entered character not found in the string!!\n");
-   exit(0);
-  }
+  else
+    continue;
  }
 
  return len;
@@ -61,3 +65,12 @@ void delete(char *str, int first, int len)
  }
   *(str+len)='\0';
 }
+
+int check(char *str, char ch)
+{
+ for(int i=0; str[i]!='\0'; i++)
+   if(str[i] == ch)
+    return 1;
+ return 0;
+}
+    
