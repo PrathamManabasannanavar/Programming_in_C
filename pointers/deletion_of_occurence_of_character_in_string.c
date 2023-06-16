@@ -1,5 +1,6 @@
 //A simple C program to delete a occurence of a particular character from a string
 #include<stdio.h>
+#include<stdlib.h>
 
 int search(char *, char, int );
 void delete(char *, int, int);
@@ -25,17 +26,20 @@ main()
 
 int search(char *str, char ch, int len)
 {
- int i;
+ int i, count=0;
  for(i=0; i<len; i++)
  {
   if(*(str+i) == ch)
   {
     delete(str,i,len);
     i=i-1; //very important in case of repeated characters
-    len--;
+    len--; count=1;
   }
-  else
-    continue;
+  else if(count==0)
+  {
+   printf("Entered character not found in the string!!\n");
+   exit(0);
+  }
  }
 
  return len;
