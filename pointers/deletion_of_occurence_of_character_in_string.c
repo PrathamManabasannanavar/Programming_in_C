@@ -1,4 +1,4 @@
-//A simple C program to delete a occurence of a particular character from a string
+//A simple C program to delete the occurences of a particular character from a string
 #include<stdio.h>
 #include<stdlib.h>
 
