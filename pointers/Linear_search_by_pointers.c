@@ -16,6 +16,7 @@ int main()
  read(a,n);
  printf("The array is\n");
  print(a,n);
+ 
  printf("Enter the key to be searched\n");
  scanf("%d",&key);
 
