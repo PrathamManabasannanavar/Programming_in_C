@@ -1,4 +1,4 @@
-// A simple C program to perform linear search in the array using pointers
+// A simple C program to perform linear search in an array using pointers
 #include<stdio.h>
 
 void read(int *, int);
