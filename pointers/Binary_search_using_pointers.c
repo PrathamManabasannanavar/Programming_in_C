@@ -70,7 +70,7 @@ void insertion_sort(int *marks, int n)
     for(j=i-1; j>=0; j--)
     {
       if(*(marks+j) > *(marks+j+1))
-          *(marks + j +1) = *(marks + j);
+          *(marks + j + 1) = *(marks + j);
       else
            break;
     }
