@@ -1,4 +1,4 @@
-//A Simple C++ program to compute the bank transactions and print the information of.the customers
+//A Simple C++ program to compute the bank transactions and print the information of the customers
 #include<iostream>
 #define SIZE 20
 using namespace std;
@@ -102,6 +102,11 @@ int main()
     cout<<"Enter 1 to deposit\nEnter 2 to withdraw\nEnter 3 to exit"<<endl;
     cout<<"Enter your choice"<<endl;
     cin>>choice;
+    if(choice < '0' || choice > '3')
+    {
+      cout<<"\nEnter the valid choice!!\n"<<endl;
+      continue;
+    }
     if(choice == '3')
     {
       cout<<"Thank you for using our services"<<endl<<"Have a nice day!!"<<endl;
@@ -114,6 +119,7 @@ int main()
     serial_no = index_of_customer(customer,n,acc_no);
     if(serial_no < 0)
       continue;
+    
     if(choice == '1')
     {
        cout<<"Enter the money to be deposited"<<endl;
@@ -131,11 +137,6 @@ int main()
        else
           cout<<"Successfully Withdrawn!!"<<endl;
        customer[serial_no].current_balance();
-    }
-    else
-    {
-      cout<<"Enter Valid choice!!"<<endl;
-      continue;
     }
     
   }
