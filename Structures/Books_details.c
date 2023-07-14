@@ -58,7 +58,7 @@ void print(books *book, int n)
      printf("Author : %s\n",book[i].author);
      printf("Publisher : %s\n",book[i].publisher);
      printf("Copies : %d\n",book[i].copies);
-     printf("Cost of each book : %fRs\n\n",book[i].cost);
+     printf("Cost of each book : %0.2fRs\n\n",book[i].cost);
   }
 }
 
@@ -119,7 +119,7 @@ int book_copies(books *book, int index)
      if(copies <= book[index].copies)
      {
         book[index].copies -= copies;
-        printf("Total cost = %fRs\n",book[index].cost * copies);
+        printf("Total cost = %0.2fRs\n",book[index].cost * copies);
         return 0;
      }
     
@@ -138,5 +138,5 @@ void display_details(books *book, int index)
    printf("Author : %s\n",book[index].author);
    printf("Publisher : %s\n",book[index].publisher);
    printf("Copies : %d\n",book[index].copies);
-   printf("Cost of each book : %fRs\n\n",book[index].cost);
+   printf("Cost of each book : %0.2fRs\n\n",book[index].cost);
 }
