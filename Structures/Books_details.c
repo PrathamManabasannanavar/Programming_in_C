@@ -120,12 +120,10 @@ int book_copies(books *book, int index)
      {
         book[index].copies -= copies;
         printf("Total cost = %fRs\n",book[index].cost * copies);
+        return 0;
      }
-     else
-     {
-        printf("There are only %d copies left in stock\n",book[index].copies);
-        continue;
-     }
+    
+     printf("There are only %d copies left in stock\n",book[index].copies);
      printf("If you want to buy within %d remaining copies enter 1 else Enter 0 to exit\n",book[index].copies);
      scanf("%d",&choice);
      if(choice != 1)
