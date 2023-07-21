@@ -1,5 +1,5 @@
 // A simple C program to find the smallest Palindromic Substring in a string
-//ex : 14oppomalayalam  ---> Length of Longest Palindrome Substring is 9 i.e 'malayalam' before 'oppo' 
+//ex : 14oppomalayalam  ---> Length of Longest Palindromic Substring is 9 i.e 'malayalam' before 'oppo' 
 #include<stdio.h>
 #include<string.h>
 
