@@ -18,7 +18,7 @@ main()
     printf("Entered time is:\n");
     display_time(&t1);
     update_time(&t1);
-    printf("Time after incrementing 1sec is:\n");
+    printf("Time after incrementing is:\n");
     display_time(&t1);
 }
 
