@@ -20,7 +20,7 @@ main()
     printf("string before reversing is : %s\n",str);
 
     printf("Reversed string is:\n");
-    for(int i=0; i<len; i++)
+    for(i=0; i<len; i++)
         printf("%c",pop());
     printf("\n");
 }
