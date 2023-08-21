@@ -74,4 +74,5 @@ void compute_tax(char *filename, int n, long index)
             tax = 0;
         printf("Salary of employee %d after tax deduction is %fRs\n", i + 1, e1.salary - tax);
     }
+       fclose(fptr);
 }
