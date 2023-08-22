@@ -49,7 +49,7 @@ int check_parentheses(char *str)
             push('[');
         else if(str[i] == '(')
             push('(');
-        // checking for closed appropriate closed parentheses    
+        // checking for appropriate closed parentheses    
         else if(str[i] == ')' && stack[top] == '(')
             pop();
         else if(str[i] == ']' && stack[top] == '[')
