@@ -2,6 +2,7 @@
 //ex : {[()]} --> balanced
 //ex : {[}] -->  Unbalanced
 #include<stdio.h>
+
 #define size 50
 
 int top = -1;
@@ -15,7 +16,7 @@ main()
 {
     char str[size];
     printf("Enter the string\n");
-    scanf("%s",str);
+    fgets(str, size, stdin);
 
     if( check_parentheses(str) == 1)
         printf("Balanced\n");
@@ -49,7 +50,7 @@ int check_parentheses(char *str)
             push('[');
         else if(str[i] == '(')
             push('(');
-        // checking for appropriate closed parentheses    
+        // checking for appropriate closed parentheses
         else if(str[i] == ')' && stack[top] == '(')
             pop();
         else if(str[i] == ']' && stack[top] == '[')
