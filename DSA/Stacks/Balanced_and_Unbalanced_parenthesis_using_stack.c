@@ -2,7 +2,6 @@
 //ex : {[()]} --> balanced
 //ex : {[}] -->  Unbalanced
 #include<stdio.h>
-
 #define size 50
 
 int top = -1;
