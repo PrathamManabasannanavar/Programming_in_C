@@ -1,6 +1,7 @@
 // A simple C program to check the balanced parantheses
 //ex : {[()]} --> balanced
 //ex : {[}] -->  Unbalanced
+
 #include<stdio.h>
 #define size 50
 
@@ -52,10 +53,16 @@ int check_parentheses(char *str)
         // checking for appropriate closed parentheses
         else if(str[i] == ')' && stack[top] == '(')
             pop();
+        else if(str[i] == ')' && stack[top] != '(')
+            return 0;
         else if(str[i] == ']' && stack[top] == '[')
             pop();
+        else if(str[i] == ']' && stack[top] != '[')
+            return 0;
         else if(str[i] == '}' && stack[top] == '{')
             pop();
+        else if(str[i] == '}' && stack[top] != '{')
+            return 0;
     }
 
     if(top == -1)
