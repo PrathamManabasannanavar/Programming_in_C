@@ -122,5 +122,6 @@ int main()
     printf("Linkedlist after insertion is:\n");
     printLinkedlist(&head);
     deleteNode(&head);
+    printf("Linkedlist after deletion is:\n");
     printLinkedlist(&head);
 }
