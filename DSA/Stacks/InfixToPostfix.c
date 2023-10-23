@@ -38,7 +38,7 @@ int priority(char ch) //add some more
 
 void infixToPrefix(char *str)
 {
-    static char expression[size];
+    char expression[size];
     int j = 0;
     for (int i = 0; str[i] != '\0'; i++)
     {
