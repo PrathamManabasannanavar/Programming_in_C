@@ -76,7 +76,6 @@ void PriorityQueue()
         default:
             printf("Enter valid choice\n");
         }
-
     }
 }
 
