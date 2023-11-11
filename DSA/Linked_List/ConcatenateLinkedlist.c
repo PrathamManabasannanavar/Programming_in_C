@@ -1,5 +1,6 @@
 //A simple C program to Concatenate 2 Linked lists
 #include<stdio.h>
+#include<stdlib.h>
 
 typedef struct node
 {
