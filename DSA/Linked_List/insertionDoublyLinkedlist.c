@@ -33,7 +33,7 @@ void displayList(node *head)
 node *insert(node *head, int pos)
 {
     if(!head) return NULL;
-    node *cur=head, *prev=NULL, *temp, *newNode;
+    node *cur=head, *newNode;
     while(--pos && cur)
     {
         if(pos == 1)
@@ -46,8 +46,6 @@ node *insert(node *head, int pos)
                 cur->next->prev = newNode;
             return head;
         }
-        printf("%d\n",pos);
-        prev = cur;
         cur = cur->next;
     }
     if(!cur)
