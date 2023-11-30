@@ -25,6 +25,7 @@ void display(node *head)
         printf("Queue is empty\n");
         return;
     }
+    printf("Queue is:\n");
     while(head)
     {
         printf("%d ",head->data);
