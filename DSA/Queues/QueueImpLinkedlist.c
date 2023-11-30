@@ -90,6 +90,6 @@ node *QueueImp()
 
 int main()
 {
-    node *head = QueueImp();
+    QueueImp();
     return 0;
 }
