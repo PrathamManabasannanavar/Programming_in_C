@@ -37,7 +37,7 @@ void displayList(node *head)
 node *concatenateList(node *head1, node *head2)
 {
     if(!head1) return head2;
-    else if(!head2) return head1;
+    if(!head2) return head1;
     node *first = head1;
     while(head1->next)
         head1 = head1->next;
