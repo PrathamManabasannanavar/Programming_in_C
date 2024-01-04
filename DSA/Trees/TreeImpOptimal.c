@@ -1,5 +1,6 @@
 //A simple C program to implement the  binary Tree
 #include<stdio.h>
+#include<stdlib.h>
 
 typedef struct node
 {
