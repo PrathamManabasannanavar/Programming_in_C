@@ -1,72 +1,68 @@
 // A simple C program to check the balanced parantheses
 //ex : {[()]} --> balanced
 //ex : {[}] -->  Unbalanced
-
 #include<stdio.h>
-#define size 50
+#include<stdlib.h>
+#define SIZE 10
 
-int top = -1;
-char stack[size];
+int stack[SIZE], top = -1;
 
-char pop();
-void push(char);
-int check_parentheses(char *);
-
-main()
+void push(int data)
 {
-    char str[size];
-    printf("Enter the string\n");
-    fgets(str, size, stdin);
-
-    if( check_parentheses(str) == 1)
-        printf("Balanced\n");
-    else
-        printf("UnBalanced\n");
+    if(top == SIZE-1) return;
+    stack[++top] = data;
 }
 
-char pop()
+int pop()
 {
-    if(top < 0)
-        return '\0';
-    top--;
-    return stack[top+1];
+    if(top == -1) return -1;
+    return stack[top--];
 }
 
-void push(char ch)
+int compare(char ch)
 {
-    if(top > size)
-        return;
-    stack[++top] = ch;
+    if(ch == '}') return stack[top] == '{';
+    if(ch == ')') return stack[top] == '(';
+    if(ch == ']') return stack[top] == '[';
+    return 0;
 }
 
-int check_parentheses(char *str)
+int isBalanced(char *str)
 {
     for(int i=0; str[i] != '\0'; i++)
     {
-        // storing open parentheses in stack
-        if(str[i] == '{')
-            push('{');
-        else if(str[i] == '[')
-            push('[');
-        else if(str[i] == '(')
-            push('(');
-        // checking for appropriate closed parentheses
-        else if(str[i] == ')' && stack[top] == '(')
-            pop();
-        else if(str[i] == ')' && stack[top] != '(')
-            return 0;
-        else if(str[i] == ']' && stack[top] == '[')
-            pop();
-        else if(str[i] == ']' && stack[top] != '[')
-            return 0;
-        else if(str[i] == '}' && stack[top] == '{')
-            pop();
-        else if(str[i] == '}' && stack[top] != '{')
-            return 0;
+        if(str[i] == '{' || str[i] == '(' || str[i] == '[')
+            push(str[i]);
+        else if(str[i] == '}' || str[i] == ')' || str[i] == ']')
+        {
+            if(top != -1 && !compare(str[i]))
+            {
+                printf("mismatched parentheses\n");
+                return 0;
+            }
+            else if(pop() == -1)
+            {
+                printf("Right Parentheses are more\n");
+                return 0;
+            }
+        }
     }
-
-    if(top == -1)
-        return 1;
-    else
+    if(top != -1)
+    {
+        printf("Left parentheses are more\n");
         return 0;
+    }
+    return 1;
+}
+
+
+main()
+{
+    char exp[SIZE];
+    printf("Enter the expression\n");
+    scanf("%s",exp);
+    if(isBalanced(exp))
+        printf("Balanced\n");
+    else
+        printf("UnBalanced\n");
 }
