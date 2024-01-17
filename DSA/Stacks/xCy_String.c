@@ -35,8 +35,8 @@ int main()
     printf("Enter the String\n");
     scanf("%s",str);
     if(isxCy(str))
-        printf("TRUE. String is in xCy format\n");
+        printf("TRUE. x is reverse of y in xCy format\n");
     else
-        printf("FALSE. String is not in xCy format\n");
+        printf("FALSE. x is not reverse of y in xCy format\n");
     return 0;
 }
