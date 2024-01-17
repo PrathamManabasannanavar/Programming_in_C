@@ -19,7 +19,7 @@ void push(int data)
 int isxCy(char *str)
 {
     int i = 0;
-    while(str[i] != 'C')
+    while(str[i] && str[i] != 'C')
         push(str[i++]);
     while(str[i])
     {
