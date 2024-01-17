@@ -21,6 +21,7 @@ int isxCy(char *str)
     int i = 0;
     while(str[i] && str[i] != 'C')
         push(str[i++]);
+    if(str[i] == '\0') return 0;
     while(str[i])
     {
       if(str[++i] != pop()) 
