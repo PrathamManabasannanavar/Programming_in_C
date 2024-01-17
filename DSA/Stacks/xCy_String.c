@@ -1,3 +1,4 @@
+//A simple C program to check the string of the form "xCy".
 #include <stdio.h>
 #define SIZE 10
 
