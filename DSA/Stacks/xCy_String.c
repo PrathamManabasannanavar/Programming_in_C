@@ -23,10 +23,8 @@ int isxCy(char *str)
         push(str[i++]);
     if(str[i] == '\0') return 0;
     while(str[i])
-    {
       if(str[++i] != pop()) 
         return 0;
-    }
     return 1;
 }
 
