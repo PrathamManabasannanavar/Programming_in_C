@@ -41,7 +41,7 @@ void display()
         return;
     }
     for(int i=0; i<=rear; i++)
-        printf("Chair %d --> Person %d\n", queue[i], i+1);
+        printf("Chair %d --> Person %d\n", i+1, queue[i]);
     printf("\n");
 }
 
