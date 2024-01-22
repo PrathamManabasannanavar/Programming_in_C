@@ -1,92 +1,84 @@
-// A simple C program to implement the Circular Queue
+//A simple C program to implement the Circular Queue
 #include<stdio.h>
 #include<stdlib.h>
-#define SIZE 5
+#define SIZE 3
 
-int queue[SIZE], rear=-1, front=-1, count=0;
+int queue[SIZE], rear = -1, front = -1, count;
+
+void dequeue()
+{
+    if(count == 0)
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("%d deleted\n", queue[front]);
+    front = (front + 1)%SIZE;
+    count--;
+}
 
 void enqueue(int data)
 {
-    if(rear == -1)
+    if(front == -1) front = 0;
+    else if(count == SIZE)
     {
-        rear = front = 0;
-        queue[rear] = data;
-        count++;
+        printf("Queue is Full\n");
+        return;
     }
-    else if((rear+1)%SIZE == front)
-    {
-        printf("Queue is full\n");
-    }
-    else
-    {
-        rear = (rear + 1) % SIZE;
-        queue[rear] = data;
-        count++;
-    }
+    rear = (rear+1)%SIZE;
+    queue[rear] = data;
+    count++;
 }
 
-int dequeue()
+void display()
 {
-    int deletedNo;
-    if(count != 0)
-    {
-        deletedNo = queue[front];
-        front = (front + 1) % SIZE;
-        count--;
-        return deletedNo;
-    }
-    else
-    {
-        printf("Queue underflow\n");
-        return -1;
-    }
+   if(count == 0)
+   {
+     printf("Queue is Empty\n");
+     return;
+   }
+   int i = front;
+   printf("Queue elements are:\n");
+   while(i != rear)
+   {
+      printf("%d -> %d\n", i, queue[i]);
+      i = (i+1) % SIZE;
+   }
+   printf("%d -> %d\n",i, queue[i]);
 }
 
-void displayQueue()
-{
-    int index = front;
-    while(index != rear)
-    {
-        printf("%d ", queue[index]);
-        index = (index + 1) % SIZE;
-    }
-    printf("%d \n", queue[index]);
-}
-void circularQueueImp()
+void circularQueue()
 {
     int choice, data;
     while(1)
     {
-        printf("1 -> Insert\n2 -> Delete\n3 -> display\n4 -> exit\n");
+        printf("f = %d\nr = %d\n",front, rear);
+        printf("Enter 1 to insert\nEnter 2 to deleted\nEnter 3 to display\nEnter 4 to exit\n");
         printf("Enter your choice\n");
         scanf("%d",&choice);
-        switch(choice)
+        switch (choice)
         {
         case 1:
-            printf("Enter the element to be inserted\n");
+            printf("Enter the data\n");
             scanf("%d",&data);
             enqueue(data);
             break;
         case 2:
-            data = dequeue();
-            if(data != -1)
-                printf("%d deleted\n", data);
+            dequeue();
             break;
         case 3:
-            printf("Elements in Queue are:\n");
-            displayQueue();
+            display();
             break;
         case 4:
             exit(0);
         default:
-            printf("Enter valid choice!!\n");
+            printf("Invalid choice\n");
         }
+        printf("\n");
     }
-
 }
 
 main()
 {
-    printf("Queue size is %d\n",SIZE);
-    circularQueueImp();
+   circularQueue();
 }
